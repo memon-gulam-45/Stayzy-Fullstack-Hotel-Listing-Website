@@ -57,6 +57,20 @@
     <div><i class="fa-solid fa-person-skiing"></i></div>
     <p>Arctic</p>
   </div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckDefault"
+      />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Display Total after Taxes</label
+      >
+    </div>
+  </div>
 </div>
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
   <% for(let listing of allListings) { %>
@@ -79,3 +93,10 @@
   >
   <% } %>
 </div>
+
+<script>
+  let taxSwitch = document.querySelector("#flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    console.log("Clicked");
+  });
+</script>
