@@ -15,9 +15,20 @@
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    position: relative;
   }
   .filter-container::-webkit-scrollbar {
     display: none;
+  }
+  .filter-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to right, transparent, white);
   }
   .filter {
     text-align: center;
@@ -64,55 +75,55 @@
 
 <div id="filters">
   <div class="filter-container">
-    <div class="filter">
+    <div class="filter" data-category="All">
       <div><i class="fa-solid fa-globe"></i></div>
       <p>All</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Trending">
       <div><i class="fa-solid fa-fire"></i></div>
       <p>Trending</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Rooms">
       <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Iconic Cities">
       <div><i class="fa-solid fa-mountain-city"></i></div>
       <p>Iconic Cities</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Mountains">
       <div><i class="fa-solid fa-mountain"></i></div>
       <p>Mountains</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Castels">
       <div><i class="fa-brands fa-fort-awesome"></i></div>
       <p>Castels</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Amazing Pools">
       <div><i class="fa-solid fa-person-swimming"></i></div>
       <p>Amazing Pools</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Camping">
       <div><i class="fa-solid fa-campground"></i></div>
       <p>Camping</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Farms">
       <div><i class="fa-solid fa-tractor"></i></div>
       <p>Farms</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Arctic">
       <div><i class="fa-solid fa-person-skiing"></i></div>
       <p>Arctic</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Domes">
       <div><i class="fa-solid fa-landmark-dome"></i></div>
       <p>Domes</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Beaches">
       <div><i class="fa-solid fa-umbrella-beach"></i></div>
       <p>Beaches</p>
     </div>
-    <div class="filter">
+    <div class="filter" data-category="Others">
       <div><i class="fa-solid fa-hexagon-nodes"></i></div>
       <p>Others</p>
     </div>
@@ -135,7 +146,11 @@
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
   <% for(let listing of allListings) { %>
-  <a href="/listings/<%= listing._id %>" class="listing-link">
+  <a
+    href="/listings/<%= listing._id %>"
+    class="listing-link"
+    data-category="<%= listing.category %>"
+  >
     <div class="card col listing-card">
       <img
         src="<%= listing.image.url %>"
@@ -167,5 +182,28 @@
         info.style.display = "none";
       }
     }
+  });
+
+  const filters = document.querySelectorAll(".filter");
+  const listings = document.querySelectorAll(".listing-link");
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const selectedCategory = filter.dataset.category;
+
+      filters.forEach((f) => f.classList.remove("active"));
+      filter.classList.add("active");
+
+      listings.forEach((listing) => {
+        if (
+          listing.dataset.category === selectedCategory ||
+          selectedCategory === "All"
+        ) {
+          listing.style.display = "block";
+        } else {
+          listing.style.display = "none";
+        }
+      });
+    });
   });
 </script>
