@@ -1,6 +1,17 @@
-<% if(success && success.length) { %>
+<style>
+  .alert-box {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .alert-box {
+      width: 90%;
+    }
+  }
+</style>
+<% if (success && success.length) { %>
 <div
-  class="alert alert-success alert-dismissible fade show col-6 offset-3"
+  class="alert text-center alert-success alert-dismissible fade show mx-auto alert-box"
   role="alert"
 >
   <%= success %>
@@ -11,9 +22,9 @@
     aria-label="Close"
   ></button>
 </div>
-<% } %> <% if(error && error.length) { %>
+<% } %> <% if (error && error.length) { %>
 <div
-  class="alert alert-danger alert-dismissible fade show col-6 offset-3"
+  class="alert alert-danger alert-dismissible fade show mx-auto alert-box"
   role="alert"
 >
   <%= error %>
