@@ -1,62 +1,13 @@
-<style>
-  .search-btn {
-    background-color: #fe424d;
-    color: #fff;
-    border-radius: 25px;
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-  }
-  .search-btn:hover {
-    background-color: #fe424d;
-    color: #fff;
-  }
-  .search-btn i {
-    white-space: nowrap;
-    margin-right: 0.5rem;
-  }
-  .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem;
-    font-size: 0.9rem;
-    width: auto;
-    flex: 1;
-  }
-  @media (max-width: 800px) {
-    .navbar-collapse{
-      background-color: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-    .nav-link{
-      padding: 0.5rem 1rem;
-    }
-    form.d-flex{
-      margin-top: 0.5rem;
-    }
-  }
-  @media (max-width: 600px) {
-    .search-inp{
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
-    }
-    .search-btn{
-      padding: 0 0.75rem;
-    }
-  }
-  @media (max-width: 500px) {
-    .navbar-brand img{
-      width: 2.5rem;
-    }
-  }
-</style>
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav
+  class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2"
+>
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"
-      ><img src="/logo.png" alt="logo" style="width: 3.5rem"
-    /></a>
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <img src="/logo.png" alt="logo" class="img-fluid" style="width: 3rem" />
+    </a>
 
+    <!-- Toggler -->
     <button
       class="navbar-toggler"
       type="button"
@@ -66,31 +17,49 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Collapse -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav me-auto mb-2 mb-mb-0">
-        <li class="nav-item"><a class="nav-link" href="/listings">Explore</a></li>
+      <!-- Left: Explore -->
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
       </ul>
 
-        <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" role="search">
-          <input
-            class="form-control me-2 search-inp"
-            type="search"
-            placeholder="Search destinations"
-          />
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
-          </button>
-        </form>
+      <!-- Center: Search -->
+      <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" role="search">
+        <input
+          class="form-control me-2 rounded-pill"
+          type="search"
+          placeholder="Search destinations"
+        />
+        <button
+          class="btn btn-danger rounded-pill px-3 d-flex align-items-center"
+          type="submit"
+        >
+          <i class="fa-solid fa-magnifying-glass me-2"></i> Search
+        </button>
+      </form>
 
-        <ul class="navbar-nav mb-2 mb-mb-0">
-        <li class="nav-item"><a class="nav-link" href="/listings/new">Add New Listings</a></li>
-        <% if(!currUser) {%>
-        <li class="nav-item"><a class="nav-link" href="/signup"><b>Sign Up</b></a></li>
-        <li class="nav-item"><a class="nav-link" href="/login"><b>Login</b></a></li>
-        <% } %> <% if(currUser) {%>
-        <li class="nav-item"><a class="nav-link" href="/logout"><b>Log Out</b></a></li>
+      <!-- Right: Links -->
+      <ul class="navbar-nav mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Add New Listings</a>
+        </li>
+
+        <% if (!currUser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        </li>
+        <% } %> <% if (currUser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        </li>
         <% } %>
+      </ul>
     </div>
-
   </div>
 </nav>
