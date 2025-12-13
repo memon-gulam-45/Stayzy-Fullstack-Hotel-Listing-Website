@@ -19,8 +19,19 @@
 >
   <div class="container-fluid">
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="/listings">
-      <img src="/logo.png" alt="logo" class="img-fluid" style="width: 3rem" />
+    <a class="navbar-brand mx-3 d-flex flex-column lh-sm" href="/">
+      <span class="fw-bold" style="font-size: 1.7rem">Stayzy</span>
+      <span
+        class="text-muted"
+        style="
+          transform: rotate(-3deg);
+          font-size: 0.8rem;
+          position: relative;
+          top: -2px;
+          z-index: 20;
+        "
+        >Your next stay, made easy</span
+      >
     </a>
 
     <!-- Toggler -->
@@ -37,6 +48,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <!-- Left: Explore -->
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/listings">Explore</a>
         </li>
