@@ -7,8 +7,8 @@ The application includes user authentication, image uploads, interactive maps, a
 
 Live Demo
 
-🔗 Deployed on Render
-👉 https://stayzy-fullstack-hotel-listing-website.onrender.com
+🔗 Deployed on Render <br>
+👉 [Click Here](https://stayzy-fullstack-hotel-listing-website.onrender.com)
 
 ---
 
