@@ -5,14 +5,10 @@ The application includes user authentication, image uploads, interactive maps, a
 
 ---
 
-<h2>Live Demo</h2>
+Live Demo
 
-<p>
-  🔗 Deployed on Render <br>
-  👉 <a href="https://stayzy-fullstack-hotel-listing-website.onrender.com" target="_blank">
-    Click Here
-  </a>
-</p>
+🔗 Deployed on Render <br>
+👉 [Click Here](https://stayzy-fullstack-hotel-listing-website.onrender.com)
 
 ---
 
