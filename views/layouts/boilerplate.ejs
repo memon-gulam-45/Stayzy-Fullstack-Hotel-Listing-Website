@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stayzy</title>
+    <meta name="theme-color" content="#2a7f7f" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" href="/logo.png" type="image/png" />
+    <link
+      rel="icon"
+      href="/logo.png"
+      type="image/
+    png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -44,5 +52,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
