@@ -169,7 +169,8 @@
         <p class="card-text">
           <b><%= listing.title %></b> <br />
           ₹<%= listing.price.toLocaleString("en-IN") %> / night
-          <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+          <i class="tax-info"> &nbsp; +18% GST</i> <br />
+          <%= listing.location %>
         </p>
       </div>
     </div></a
