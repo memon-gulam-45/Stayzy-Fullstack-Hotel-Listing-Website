@@ -4,21 +4,16 @@
 </script>
 
 <div class="container mt-4">
-  <!-- Listing Title -->
-  <div class="row">
-    <div class="col-12">
-      <h3 class="mb-3"><%= listing.title %></h3>
-    </div>
-  </div>
 
   <!-- Listing Card -->
   <div class="card mb-4 listing-card mx-auto" style="max-width: 700px">
+    <h3 class="mb-3"><%= listing.title %></h3>
     <img
       src="<%= listing.image.url %>"
       class="card-img-top img-fluid"
       alt="Listing Image"
     />
-    <div class="card-body">
+    <div class="card-body mt-3">
       <p class="card-text">
         <strong>Owned By:</strong> <i><%= listing.owner.username %></i>
       </p>
