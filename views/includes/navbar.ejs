@@ -11,39 +11,29 @@
     .navbar-nav .nav-link {
       padding: 0.5rem 1rem;
     }
+
     .search-inp {
       border-color: #2a7f7f;
     }
   }
 </style>
 
-<nav
-  class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2"
->
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top py-2">
   <div class="container-fluid">
     <!-- Brand -->
     <a class="navbar-brand mx-3 d-flex flex-column lh-sm" href="/">
       <span class="fw-bold" style="font-size: 1.7rem">Stayzy</span>
-      <span
-        class="text-muted"
-        style="
+      <span class="text-muted" style="
           transform: rotate(-3deg);
           font-size: 0.8rem;
           position: relative;
           top: -2px;
           z-index: 20;
-        "
-        >Your next stay, made easy</span
-      >
+        ">Your next stay, made easy</span>
     </a>
 
     <!-- Toggler -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -60,18 +50,9 @@
       </ul>
 
       <!-- Center: Search -->
-      <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" onsubmit="console.log('SUBMIT');" action="/listings" autocomplete="off" method="GET" role="search">
-        <input
-          class="form-control me-2 px-4 border-1 search-inp rounded-pill"
-          type="search"
-          name="search"
-          placeholder="Search destinations"
-        />
-        <button
-          id="rev-btn"
-          class="btn rounded-pill px-3 d-flex align-items-center"
-          type="submit"
-        >
+      <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" action="/listings" autocomplete="off" method="GET" role="search">
+        <input class="form-control me-2 px-4 border-1 search-inp rounded-pill" type="search" name="search" placeholder="Search destinations" />
+        <button id="rev-btn" class="btn rounded-pill px-3 d-flex align-items-center" type="submit">
           <i class="fa-solid fa-magnifying-glass me-2"></i> <b>Search</b>
         </button>
       </form>
