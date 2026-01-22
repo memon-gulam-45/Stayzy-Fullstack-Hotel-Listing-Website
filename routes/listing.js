@@ -11,12 +11,13 @@ const { upload, cloudinary } = require("../cloudConfig.js");
 
 router
   .route("/")
+  .get(listingController.searchListing)
   .get(wrapAsync(listingController.index))
   .post(
     isLoggedIn,
     upload.single("listing[image]"),
     validateListing,
-    wrapAsync(listingController.createListing)
+    wrapAsync(listingController.createListing),
   );
 
 //New Route
@@ -29,8 +30,7 @@ router
     isLoggedIn,
     isOwner,
     upload.single("listing[image]"),
-    validateListing,
-    wrapAsync(listingController.updateListing)
+    wrapAsync(listingController.updateListing),
   )
   .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 
@@ -39,7 +39,7 @@ router.get(
   "/:id/edit",
   isLoggedIn,
   isOwner,
-  wrapAsync(listingController.renderEditForm)
+  wrapAsync(listingController.renderEditForm),
 );
 
 module.exports = router;
