@@ -60,10 +60,11 @@
       </ul>
 
       <!-- Center: Search -->
-      <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" role="search">
+      <form class="d-flex my-2 my-md-0 mx-md-3 flex-fill" onsubmit="console.log('SUBMIT');" action="/listings" autocomplete="off" method="GET" role="search">
         <input
           class="form-control me-2 px-4 border-1 search-inp rounded-pill"
           type="search"
+          name="search"
           placeholder="Search destinations"
         />
         <button
