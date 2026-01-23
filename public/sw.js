@@ -3,6 +3,7 @@ const CACHE_NAME = "stayzy-v4";
 const ASSETS = [
   "/css/style.css",
   "/js/script.js",
+  "/screenshots",
   "/manifest.json",
   "/offline.html",
 ];
