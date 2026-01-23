@@ -1,9 +1,9 @@
-const CACHE_NAME = "stayzy-v4";
+const CACHE_NAME = "stayzy-v5";
 
 const ASSETS = [
   "/css/style.css",
   "/js/script.js",
-  "/screenshots",
+  "/icons",
   "/manifest.json",
   "/offline.html",
 ];
