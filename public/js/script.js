@@ -21,3 +21,18 @@
     );
   });
 })();
+
+const banner = document.getElementById("offline-banner");
+
+function updateOnlineStatus() {
+  if (!navigator.onLine) {
+    banner.style.display = "block";
+  } else {
+    banner.style.display = "none";
+  }
+}
+
+updateOnlineStatus();
+
+window.addEventListener("online", updateOnlineStatus);
+window.addEventListener("offline", updateOnlineStatus);
